@@ -24,7 +24,7 @@
         <div class="content">
             {% for city_list in city %}
             <div class="bookstore">
-                <a href="{% url 'bookstore' city_list.name %}">{{city_list.name}}</a>
+                <a href="{% url 'location:bookstore' city_list.name %}">{{city_list.name}}</a>
             </div>
             <br><br><br><br>
             {% endfor %}

@@ -17,7 +17,7 @@ class City(models.Model):
 class Bookstore(models.Model):
     objects = models.Manager()
     name = models.CharField(max_length=20, default="이름을 입력하세요", null=True) # name of bookstore.
-    city_address_of_bookstore = models.ForeignKey(City, on_delete=models.CASCADE, related_name='bookstiores') # location of bookstore in city scale.
+    city_address_of_bookstore = models.ForeignKey(City, on_delete=models.CASCADE) # location of bookstore in city scale.
     specific_address = models.TextField() # location of bookstore in specific scale.
     trait = models.ForeignKey(Trait, on_delete=models.CASCADE)# trait of bookstore.
     bookstore_information = models.TextField() # summary about bookstore.

@@ -1,0 +1,16 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Independent Book Store</title>
+</head>
+<body>
+    <h1>안녕하세요</h1>
+    {% for bookstore_list in bookstore %}
+        <p>{{bookstore_list.trait}}</p>
+    {% endfor %}
+</body>
+</html>
