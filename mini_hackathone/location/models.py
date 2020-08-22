@@ -10,9 +10,9 @@ class Trait(models.Model):
 
 class City(models.Model):
     objects = models.Manager()
-    city_adress = models.CharField(max_length=30, primary_key=True) # to hand over primary key of city_adress at url, I made City Model.
+    name = models.CharField(max_length=30, primary_key=True) # to hand over primary key of city_adress at url, I made City Model.
     def __str__(self):
-        return self.city_adress
+        return self.name
 
 class Bookstore(models.Model):
     objects = models.Manager()

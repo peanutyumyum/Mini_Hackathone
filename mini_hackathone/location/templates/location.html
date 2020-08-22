@@ -12,17 +12,19 @@
     <div class="container"><br>
         <ul class="navbar">
             <li class="title">
-                <h1>동네책방과 함께하는 서점들</h1>
+                <h1>지역들</h1>
             </li>
             <li class="move_navbar">
-                <span href="#">HoME</span>
+                <a href="{% url 'golmokchaekbang:home' %}">
+                    <span>HoME</span>
+                </a>
             </li>
         </ul>
         <br><br><br><br>
         <div class="content">
-            {% for bookstore_list in bookstore %}
+            {% for city_list in city %}
             <div class="bookstore">
-                <a href="{% url 'bookstore' bookstore_list.id %}">{{bookstore_list.name}}</a>
+                <a href="{% url 'bookstore' city_list.name %}">{{city_list.name}}</a>
             </div>
             <br><br><br><br>
             {% endfor %}

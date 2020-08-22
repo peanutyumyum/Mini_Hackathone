@@ -4,30 +4,25 @@ from django.shortcuts import render, get_object_or_404
 
 # import models
 
-from .models import Bookstore, Evaluation_about_bookstore, Informations
+from .models import Bookstore, City, Evaluation_about_bookstore, Informations
 
 # Create your views here.
 
 def location(request):
-    bookstore_model = Bookstore.objects.all()
-    evaluation_about_bookstore_model = Evaluation_about_bookstore.objects.all()
-    informations_model = Informations.objects.all()
+    city_model = City.objects.all()
     # insert model information to use in location.html
 
     context = {
-        'bookstore' : bookstore_model, 
-        'evaluation_about_bookstore' : evaluation_about_bookstore_model, 
-        'informations' : informations_model, 
+        'city' : city_model,
     }
     # declare variable
     
     return render(request, 'location.html', context)
 
-def location_bookstore(request, bookstore_id):
-
-    bookstore = get_object_or_404(Bookstore, pk=bookstore_id)
+def location_bookstore(request, city_name):
     bookstore_model = Bookstore.objects.all()
     # insert model information to use in location_bookstore.html
+
 
     """ city_address_of_bookstore_을지로_model = bookstore_model.filter(city_address_of_bookstore='을지로')
     city_address_of_bookstore_망원동_model = bookstore_model.filter(city_address_of_bookstore='망원동')
