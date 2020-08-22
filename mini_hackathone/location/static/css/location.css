@@ -1,11 +1,10 @@
 html, body {
     height: 100%;
-
 }
 .container{
     height: 100%;
     width: 100%;
-    background-image: url('독립서점 3.jpeg');
+    background-image: url('../img/location_background_img.jpeg');
     background-size: cover;
     opacity: 0.75;
     display: flex;

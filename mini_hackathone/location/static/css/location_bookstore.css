@@ -1,5 +1,5 @@
 body{
-    background-image: url(paper.jpg);
+    background-image: url('../img/paper.jpg');
 }
 .all_page{
     display: flex;
