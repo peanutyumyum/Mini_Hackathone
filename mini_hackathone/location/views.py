@@ -21,7 +21,7 @@ def location(request):
     return render(request, 'location.html', context)
 
 def location_filtered_bookstore(request, city_name):
-    filtered_bookstore_model = Bookstore.objects.filter(city_address_of_bookstore='city_name')
+    filtered_bookstore_model = Bookstore.objects.filter(city_address_of_bookstore=city_name)
     # insert model information to use in location_filtered_bookstore.html
 
 
