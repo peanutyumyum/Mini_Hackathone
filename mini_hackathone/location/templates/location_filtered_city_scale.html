@@ -8,7 +8,10 @@
     <title>Independent Book Store</title>
 </head>
 <body>
-    여기에는 해당 동에 있는 모든 서점들이 나와야함
-    그걸 클릭하면 이제 넘어가겠쥬?
+    <h1>안녕하세요</h1>
+    여기에다 ~~동 이런식으로 해야함
+    {% for bookstore_list in bookstore %}
+        <p>{{bookstore_list.name}}</p>
+    {% endfor %}
 </body>
 </html>
