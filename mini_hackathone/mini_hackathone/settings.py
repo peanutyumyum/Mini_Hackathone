@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'location',
     'search',
     'community',
+    'account',
 ]
 
 MIDDLEWARE = [

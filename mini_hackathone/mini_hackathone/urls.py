@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('location.urls', namespace='location')),
     path('', include('search.urls', namespace='search')),
     path('', include('community.urls', namespace='community')),
+    path('', include('account.urls', namespace='account')),
 ]
 
 if settings.DEBUG:

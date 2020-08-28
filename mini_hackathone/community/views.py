@@ -10,12 +10,16 @@ from django.views.generic.detail import DetailView
 
 # import models
 
-from .models import Blog, Comment
+from .models import Post, Comment
 
 
 # Create your views here.
 
-class community(ListView):
+def community(request):
+    return render(request, 'community.html')
+
+
+""" class community(ListView):
     template_name = 'community.html'
     context_object_name = 'blog_list' 
     def get_queryset(self):
@@ -59,4 +63,4 @@ def comment_write(request, post_pk):
         }
 
         Comment.objects.create(post=post, comment_write=writer,comment_contents=content)
-        return HttpResponseRedirect(reverse_lazy('community', context))
+        return HttpResponseRedirect(reverse_lazy('community', context)) """
