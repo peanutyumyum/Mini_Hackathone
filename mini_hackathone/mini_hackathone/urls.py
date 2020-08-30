@@ -20,7 +20,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('golmokchaekbang.urls', namespace='golmokchaekbang')), # if you want to approach at anothor app url, you must write namescape='appname' and you should write {% url 'namescape:name' %} in html a tag code
+    path('', include('golmokchaekbang.urls', namespace='golmokchaekbang')), # if you want to approach at anothor app url, you must write namescape='appname' and you should write {% url 'namescape:name' %} in html <a> tag code
     path('', include('location.urls', namespace='location')),
     path('', include('search.urls', namespace='search')),
     path('', include('community.urls', namespace='community')),
