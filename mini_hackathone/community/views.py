@@ -16,12 +16,23 @@ from .models import Post, Comment
 # Create your views here.
 
 def community(request):
-    comment_model = Comment.objects.all()
+    post_model = Post.objects.all()
 
-    return render(request, 'community.html')
+    context = {
+        'post' : post_model,
+    }
+
+    return render(request, 'community.html', context)
 
 def community_detail(request, post_id):
-    return render(request, 'community_dtail.html')
+    post_model = Post.objects.get(pk=post_id)
+    comment_model = Comment.objects.filter(post=post_model.title)
+
+    context = {
+        'post' : post_model,
+        'comment' : comment_model,
+    }
+    return render(request, 'community_dtail.html', context)
 
 
 """ class community(ListView):

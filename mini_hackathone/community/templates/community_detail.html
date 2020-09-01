@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Independent Book Store</title>
+</head>
+<body>
+    {{post.title}}
+    {{post.content}}
+    {{post.author}}
+    {{post.time}}
+    {{post.hit}}
+    <br><br>
+    {% for comment_list in comment %}
+        {{comment_list.content}}
+        {{comment_list.author}}
+    {% endfor %}
+</body>
+</html>
