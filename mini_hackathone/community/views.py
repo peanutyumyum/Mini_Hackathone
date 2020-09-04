@@ -1,7 +1,7 @@
 # import django system
 
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -12,6 +12,9 @@ from django.views.generic.detail import DetailView
 
 from .models import Post, Comment
 
+# import forms
+
+from .forms import PostForm, CommentForm
 
 # Create your views here.
 
@@ -33,6 +36,21 @@ def community_detail(request, post_id):
         'comment' : comment_model,
     }
     return render(request, 'community_dtail.html', context)
+
+def community_write(request):
+    post_form = PostForm()
+    context = {
+        'form' : post_form,
+    }
+    if request.method == "POST":
+        if not request.user.is_anonymous:
+            if post_form.is_valid():
+                post_form.save(commit=False)
+                post_form.author = request.user
+                post_form.save()
+                return redirect('community')
+    return render(request, 'community_write.html', context)
+
 
 
 """ class community(ListView):

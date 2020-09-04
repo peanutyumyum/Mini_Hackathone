@@ -6,6 +6,19 @@ class PostForm(forms.ModelForm):
         modelt = Post
         fields = ('title', 'content')
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['title'].label = "제목"
+        self.fields['title'].widget.attrs.update({
+            'class' : 'title',
+            'placeholder' : '제목을 입력하세요'
+        })        
+        self.fields['content'].label = "내용"
+        self.fields['content'].widget.attrs.update({
+            'class' : 'content',
+            'placeholder' : '내용을 입력하세요'
+        })
+
 class CommentForm(forms.ModelForm):
 
     class Meta:
