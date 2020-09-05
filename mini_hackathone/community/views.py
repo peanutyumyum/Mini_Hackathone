@@ -49,7 +49,8 @@ def community_write(request):
                 post_form.author = request.user
                 post_form.save()
                 return redirect('community')
-    return render(request, 'community_write.html', context)
+    else:
+        return render(request, 'community_write.html', context)
 
 
 
